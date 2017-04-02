@@ -5,11 +5,11 @@ This is a course project from Udemy [Angular 2 (or 4) & NodeJS - The Practical M
 ## Introduction
 
 * Front End
- * Angular 2: run in brower (JavaScript) run on a single page, updates DOM, handles routing to load things faster
+    * Angular 2: run in brower (JavaScript) run on a single page, updates DOM, handles routing to load things faster
 * Back End
- * NodeJS: server side code (JavaScript)
- * ExpressJS: a framework wraps NodeJS (JavaScript)
- * MongoDB
+    * NodeJS: server side code (JavaScript)
+    * ExpressJS: a framework wraps NodeJS (JavaScript)
+    * MongoDB
 
 ## Project Setup
 
@@ -29,3 +29,7 @@ npm run build
 ```
 npm start
 ```
+
+IDE: Webstorm
+
+
