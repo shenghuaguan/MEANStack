@@ -21,13 +21,11 @@ This is a course project from Udemy [Angular 2 (or 4) & NodeJS - The Practical M
 Download NodeJS from `https://nodejs.org/en/` with lastest version v7.8.0current
 Download seed zip folder and extract it, go into seed project then run `npm install`
 
-**run client**
 ```
+# run client
 npm run build
-```
 
-**run server**
-```
+# run server
 npm start
 ```
 
@@ -73,5 +71,55 @@ install mongoose package
 ```
 npm install --save mongoose
 npm install --save mongoose-unique-validator
+```
+
+```javascript
+router.get('/', function (req, res, next) {
+    // findOne get the first row in the database
+    User.findOne({}, function(err, doc) {
+        if (err) {
+            return res.send('Error!');
+        }
+        res.render('node', {email: doc.email});
+    });
+});
+```
+
+## Angular 2
+
+**Single page application** only use single page
+
+`polyfills.ts` import the polyfills we need, so our application can run on multiple browsers
+`main.ts` import polyfills.ts, is the first file to run when executing bundle.js in index.hbs file
+
+`decorator` is attached to class
+
+* Property Binding: pass a value from parent to child
+* Event Binding: pass a value from child to parent through event
+* Directives:
+    * are instructions Angular 2 will execute
+    * Components are directives (with a view, the template)
+    * use selectors to let Angular 2 know which parts of the HTML code represent instructions
+    * Kind: attribute/structural directives
+
+Attribute directive:
+
+```
+<article class="panel panel-default" [ngStyle]="{backgroundColor: color}" (mouseenter)="color='green'">
+```
+
+Structural directive: start with `*`
+
+```
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <app-message
+                    [message]="message"
+                    (editClicked)="message.content = $event"
+                    *ngFor="let message of messages"></app-message>
+        </div>
+    </div>
+</div>
 ```
 
